@@ -1,14 +1,16 @@
 "use strict"
 
 const pad = require("pad")
-const faker = require("faker");
-faker.locale = "pt_BR"
+const faker = require("faker")
+const fs = require("fs")
 
 function getRandomGrade() {
     return Math.floor(Math.random() * 100 + 1)
 }
 
 const studentsDB = []
+faker.locale = "pt_BR"
+
 for (let studentCode = 1; studentCode <= 100; studentCode++) {
     const firstName = faker.name.firstName() 
     const lastName = faker.name.lastName()
@@ -28,4 +30,8 @@ for (let studentCode = 1; studentCode <= 100; studentCode++) {
     })
 }
 
-console.log(JSON.stringify(studentsDB, null, 2));
+const output = JSON.stringify(studentsDB, null, 2)
+fs.writeFile("./app/studentsDB.json", output, function(err) {
+    if(err) throw err
+    console.log("The studentsDB.js has been generated!")
+})
