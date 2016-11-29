@@ -1,11 +1,11 @@
 {
   "name": "2016-si6-secondexam",
   "version": "1.0.0",
-  "description": "",
+  "description": "2016 - SI6 Second Exam",
   "scripts": {
     "postinstall": "node ./scripts/generate-studentsDB.js"
   },
-  "author": "",
+  "author": "Edy Segura",
   "license": "ISC",
   "devDependencies": {
     "faker": "^3.1.0",
