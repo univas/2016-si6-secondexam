@@ -11,13 +11,13 @@ function getRandomGrade() {
 const studentsDB = []
 faker.locale = "pt_BR"
 
-for (let studentCode = 1; studentCode <= 100; studentCode++) {
+for (let studentNumber = 1; studentNumber <= 100; studentNumber++) {
     const firstName = faker.name.firstName() 
     const lastName = faker.name.lastName()
     const year = 2017
 
     studentsDB.push({
-        code: year + pad(3, studentCode, "0"),
+        id: year + pad(3, studentNumber, "0"),
         name: faker.name.findName(firstName, lastName),
         email: faker.internet.email(firstName, lastName).toLowerCase(),
         photo: faker.image.people(128, 128),
