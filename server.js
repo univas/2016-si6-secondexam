@@ -6,6 +6,7 @@ const app = express()
 app.use(bodyParser.json())
 app.use(express.static("public"))
 
+app.use('/api/students/', require('./app/students.js'))
 
 const hostname = 'localhost'
 const port = 27016
