@@ -20,6 +20,7 @@
  //Função já criada
  
  //Exemplo STACKOVERFLOW: http://pt.stackoverflow.com/questions/87035/como-imprimir-o-conte%C3%BAdo-de-uma-p%C3%A1gina-com-bootstrap-e-jquery 
+ //Exemplo pokedex - em aula
  
     function studentDataPrint(student) {
         studentName(student.name);

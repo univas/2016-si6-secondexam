@@ -17,9 +17,16 @@ function catchPokemon(studentId) {
 function catchStudent(request, response) {
     var studentID = request.query.mat;
     if (studentID) {
-        var student = students.find(student => student.id === studentID);
-        var student = students.find(student => student.id === studentID);
-        student.situation = checkSituation(student);
+        
+        //checa ID
+        var student = students.find(function(student){
+             student.id === studentID; });
+             
+        //checa SITUACAO
+        var student = students.find(function(student){
+            student.id === studentID;
+            student.situation = checkSituation(student)}); 
+        
         if (student) {
             response.send(student);
         } else {
