@@ -17,7 +17,7 @@ function calculateAvarageGrades(grades) {
 }
 
 function checkStudentStatus(avarageGrade) {
-    if(avarageGrade < 50) return 'Disapproved'
+    if(avarageGrade < 50) return 'Reproved'
     if(avarageGrade < 60) return 'Final'
     return 'Approved'
 }
