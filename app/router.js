@@ -3,5 +3,5 @@
 let studentsApi = require('./studentsApi');
 
 module.exports = (server) => {
-    server.get('/student', studentsApi.getStudent);
+    server.get('/students', studentsApi.getStudent);
 };
