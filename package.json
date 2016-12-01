@@ -10,5 +10,21 @@
   "devDependencies": {
     "faker": "^3.1.0",
     "pad": "^1.0.2"
-  }
+  },
+  "main": "Student Report",
+  "dependencies": {
+    "body": "^5.1.0",
+    "express": "^4.14.0",
+    "faker": "^3.1.0",
+    "pad": "^1.0.2",
+    "parser": "^0.1.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AnniePresciliana/2016-si6-secondexam.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AnniePresciliana/2016-si6-secondexam/issues"
+  },
+  "homepage": "https://github.com/AnniePresciliana/2016-si6-secondexam#readme"
 }

@@ -12,10 +12,10 @@ function getAverage (grades){
 
 function getStatus (average){
     
-    if(average >=60){
-        console.log("Status:Approved");
+    if(average >= 60){
+        console.log("Status:Approved")
     }
-    else if(average >50 && average< 60){
+    else if(average >= 50 && average< 60){
         console.log("Status:End")
     }
     else{       
