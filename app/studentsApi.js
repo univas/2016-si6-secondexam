@@ -9,5 +9,20 @@ function selectStudent(studentID) {
 }
 
 router.get("/", (request, response) => {
-          
+          response.json(studentDB)
 })
+
+router.get("/:studentID", (request,response) =>{
+    let studentID = request.params.studentID
+    let studentData = selectStudent(studentID)
+    
+    if(studentData){
+        response.json(studentData)
+    }else{
+        response
+        .status(400)
+        .send("Not Found Student!")
+    }
+})
+
+module.exports = router
