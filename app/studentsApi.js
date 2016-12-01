@@ -4,8 +4,8 @@ const express = require("express")
 const router = express.Router()
 const studentDB = require("./studentsDB.json")
 
-function selectStudent(studentID) {
-    return studentDB.find(student => student.id === studentID)
+function getStudentById(id) {
+    return studentDB.find(student => student.id === id)
 }
 
 router.get("/", (request, response) => {
@@ -13,8 +13,8 @@ router.get("/", (request, response) => {
 })
 
 router.get("/:studentID", (request,response) =>{
-    let studentID = request.params.studentID
-    let studentData = selectStudent(studentID)
+    let id = request.params.studentID
+    let studentData = getStudentById(id)
     
     if(studentData){
         response.json(studentData)
@@ -22,6 +22,7 @@ router.get("/:studentID", (request,response) =>{
         response
         .status(400)
         .send("Not Found Student!")
+       
     }
 })
 
