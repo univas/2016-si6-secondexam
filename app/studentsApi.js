@@ -4,7 +4,7 @@ const studentDB = require("./studentsDB.json")
 
 //api
 
-function catchNameStudent(studentId){
+function catchStudent(studentId){
     return studentsDB.find(student => student.id === studentId)
 }
 
@@ -15,7 +15,7 @@ router.get("/", (request, response) => {
 
 router.get("/:studentId", (request, response) => {
     let studentId = request.params.studentId
-    let studentData = catchNameStudent(studentId)
+    let studentData = catchStudent(studentId)
     
     if(studentData){
         response.json(studentData)
@@ -25,7 +25,7 @@ router.get("/:studentId", (request, response) => {
     }
 })
 
-
+//aprovado ou não
 function situacao(nota1, nota2, nota3, nota4){
     var media = (nota1 + nota2 + nota3 + nota4) / 4
     var mensagem
