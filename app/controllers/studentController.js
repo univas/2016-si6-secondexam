@@ -16,11 +16,7 @@ var studentController = {
             return a + b;
         });
         
-        console.log(average)
-        console.log(grades.length)
         average = average / grades.length;
-        
-        console.log(average)
         
         if(average < 50) return "Not Approved"
         if(average < 60) return "Final"
