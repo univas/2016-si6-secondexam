@@ -7,10 +7,10 @@
             url: "/api/students/" + id
         })
         .done(function(student){
-            $("#name").replaceWith(student.name);
-            $("#email").replaceWith(student.email);
+            $("#name").replaceWith('<h2 id="name">' + student.name + '</h2>');
+            $("#email").replaceWith('<span id="email">'+student.email+'</span>');
             $("#photo").attr('src',student.photo);
-            $("#status").replaceWith(student.status);
+            $("#status").replaceWith('<span id="status">'+student.status+'</span>');
             
         });
     }

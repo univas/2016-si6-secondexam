@@ -9,8 +9,8 @@ app.get('/', function (req, res) {
     res.sendFile('./public/index.html')
 })
 
+app.get('/')
+
 app.use("/api/students", require ("./app/studentsAPI"));
 
-app.listen(3000, function () {
-    console.log("Server started");
-});
+app.listen(3000);

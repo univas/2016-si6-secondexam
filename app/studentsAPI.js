@@ -21,7 +21,6 @@ router.get("/:studentId", function(req, res){
 })
 
 function checkStatus(student) {
-    //var student = getStudentById(studentId);
     var media = calculateMedia(student);
     
     var result;
