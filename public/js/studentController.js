@@ -6,8 +6,10 @@
             method: "GET",
             url: "/api/students/" + id
         })
-        .done(student => {
-            console.log(student)
+        .done(function onResponse {
+            $("#studentId").val('')
+            $(document.body)
+            .append(student.id);
         });
     }
 

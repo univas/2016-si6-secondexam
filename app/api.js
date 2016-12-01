@@ -16,7 +16,7 @@ router.get("/", (request, response) => {
 })
 
 router.get("/:matriculaId", (request, response) => {
-    let matriculaId = request.params.pokeId
+    let matriculaId = request.params.id
     let studentData = getStudentById(matriculaId)
     
     if(studentData) {
@@ -28,9 +28,26 @@ router.get("/:matriculaId", (request, response) => {
         .send("Not Found!")
     }
 })
+//
 
-
-
+function media(matriculaId) {
+    let notas = getStudentById.grades
+    let soma = 0
+    array.forEach(function(notas) {
+        soma += notas; 
+    }, this);
+    return soma/4;
+}
+function situacao(id) {
+    let media = media(id)
+    if(media >== 60){
+        return 'Aprovado'
+    }else if(media >==50 && media < 60){
+        return'Final'
+    }else {
+        return'Reprovado'
+    }
+}
 
 
 // export router
