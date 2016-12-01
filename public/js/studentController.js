@@ -22,13 +22,6 @@
  //Exemplo STACKOVERFLOW: http://pt.stackoverflow.com/questions/87035/como-imprimir-o-conte%C3%BAdo-de-uma-p%C3%A1gina-com-bootstrap-e-jquery 
  //Exemplo pokedex - em aula
  
-    function studentDataPrint(student) {
-        studentName(student.name);
-        studentEmail(student.email);
-        studentPhoto(student.photo);
-        studentStatus(student.situation);
-    }
-
     //Imprime o nome do Estudante
     function studentName(name) {
         $('#name').html(name);
@@ -53,4 +46,5 @@
     function studentStatus(status) {
         $('#status').html(status);
     }
+    
 })();

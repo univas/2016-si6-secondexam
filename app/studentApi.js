@@ -3,7 +3,6 @@
 // dependencies
 const express = require("express");
 const router = express.Router();
-const studentApi = require('./studentApi');
 const studentDB = require("./studentDB.json");
 
 // private
@@ -30,9 +29,8 @@ function catchStudent(request, response) {
         if (student) {
             response.send(student);
         } else {
-            {
-                response.send(student);
-            }
+            response.send(student);
+        }
 
 //Função que verifica a situação do Aluno
 function checkSituation() {
