@@ -1,12 +1,14 @@
 const express = require("express");
-const bodyType = require("body-type");
-const studentsDB = require("studentsDB.json");
 
 var app = express();
 
-app.use(bodyParser.json());
-app.use(express.static('public'));
+//app.use(bodyParser.json());
+//app.use(express.static('public'));
 
 app.get('/', function (req, res) {
-    res.sendFile('index.html')
+    res.sendFile('./public/index.html')
 })
+
+app.use("/api/students", require ("./app/studentsAPI"));
+
+app.listen(6000);
