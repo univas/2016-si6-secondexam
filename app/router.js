@@ -1,7 +1,7 @@
 'use strict';
 
+let studentsApi = require('./studentsApi');
+
 module.exports = (server) => {
-    server.get('/test', (req, res) => {
-        res.sendStatus(200);
-    });
+    server.get('/student', studentsApi.getStudent);
 };
