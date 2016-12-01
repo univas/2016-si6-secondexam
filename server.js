@@ -14,7 +14,8 @@ app.get("/", function (request, response) {
   response.sendFile("index.html")
 })
 
-
+// poke api endpoint
+app.use("/students", require("./app/api"))
 
 // start server
 const hostname = "localhost"
