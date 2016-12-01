@@ -2,6 +2,7 @@
   "name": "2016-si6-secondexam",
   "version": "1.0.0",
   "description": "2016 - SI6 Second Exam",
+  "main": "server.js",
   "scripts": {
     "postinstall": "node ./scripts/generate-studentsDB.js"
   },
@@ -10,5 +11,9 @@
   "devDependencies": {
     "faker": "^3.1.0",
     "pad": "^1.0.2"
+  },
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0"
   }
 }
