@@ -1,18 +1,26 @@
+"use strict"
+const express = require("express")
+const router = express.Router();
 const studentsDB = require("./studentsDB.json");
 
 function checkStatus(studentId) {
-    var student = findStudent(studentId);
+    var student = getStudentById(studentId);
     var media = calculateMedia(student);
+    
+    var result;
+    
     if(media<50){
-        console.log("Reproved");
+        result = "Reproved";
     }else if(media<60){
-        console.log("Final")
+        result = "Final";
     }else{
-        console.log("Approved")
+        result = "Approved";
     }
+    
+    return result;
 }
 
-function findStudent(studentId) {
+function getStudentById(studentId) {
     return studentsDB.find(student => student.id === studentId);
 }
 
@@ -22,7 +30,25 @@ function calculateMedia(student) {
         total+=student.grades[i]          
     }
     var media = total/4;
+
     return media;
+    
 }
 
-checkStatus("2017011");
+router.get("/", (req, res) => {
+    res.json(studentsDB);
+})
+
+router.get("/:studentId", function(req, res){
+    let studentId = req.params.studentId
+    let studentData = getStudentById(studentId)
+    
+    if(studentData) {
+        res.json(studentData)
+    }else{
+        res.status(404).send("Not Found")
+    }
+})
+
+
+module.exports = router
