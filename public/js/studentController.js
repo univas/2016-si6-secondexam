@@ -19,7 +19,7 @@
         printName(student.name);
         printEmail(student.email);
         printPhoto(student.photo);
-        printStatus(student.situation);
+        printStatus(student.status);
     }
 
     function printName(name) {

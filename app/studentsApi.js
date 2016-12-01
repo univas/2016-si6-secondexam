@@ -11,7 +11,7 @@ module.exports = (() => {
         let id = req.query.mat;
         if (id) {
             let student = students.find(student => student.id === id);
-            student.situation = getSituation(student);
+            student.status = getStatus(student);
             if (student) {
                 res.status(200).send(student);
             } else {
@@ -22,7 +22,7 @@ module.exports = (() => {
         }
     }
 
-    function getSituation(student) {
+    function getStatus(student) {
         let grade = calculateGrade(student);
         if (grade < 50) {
             return 'Disapproved';
