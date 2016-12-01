@@ -3,7 +3,7 @@
 // dependencies
 const express = require("express")
 const router = express.Router()
-const studentsDB = require("./stusentsDB.json")
+const studentsDB = require("./studentsDB.json")
 
 // private
 function getStudentById(id) {
