@@ -40,9 +40,9 @@ function media(matriculaId) {
 }
 function situacao(id) {
     let media = media(id)
-    if(media >== 60){
+    if(media >= 60){
         return 'Aprovado'
-    }else if(media >==50 && media < 60){
+    }else if(media >=50 && media < 60){
         return'Final'
     }else {
         return'Reprovado'
