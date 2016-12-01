@@ -14,19 +14,20 @@
     <form action="" method="POST">
         <div>
             <label for="studentId">Student Id:</label>
-            <input type="number" name="studentId">
+            <input type="number" id="studentId">
         </div>
         <input type="submit" value="Get student status">
     </form>
 
     <section>
         <h2>Edy Segura</h2>
-        E-mail: edysegura@gmail.com
-        <img src="http://lorempixel.com/128/128/people" alt="Edy Segura Photo">
-        Status: Approved / Reproved
+        E-mail: <span id="email">edysegura@gmail.com</span>
+        <img id="photo" src="http://lorempixel.com/128/128/cats" alt="">
+        Status: <span id="status">Approved / Final / Reproved</span>
     </section>
 </aside>
 
 <script src="vendor/jquery.min.js"></script>
+<script src="js/studentController.js"></script>
 </body>
 </html>
