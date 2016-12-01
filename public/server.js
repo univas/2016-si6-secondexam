@@ -7,6 +7,8 @@ const api = express()
 const port = 8080
 const hostname = 'localhost'
 
+require('./routes.js')(app)
+
 app.use(bodyParser())
 app.use(express.static("public"))
 
