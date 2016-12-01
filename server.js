@@ -15,4 +15,8 @@ app.get('/', function(request, response) {
     response.sendFile("index.html")
 })
 
-//app.use("app/student", require('./app/studentAPI.js'))
+/*app.post('/app/students', function(request, response) {
+    response.sendFile("./app/studentAPI.js")
+})*/
+
+app.use("app/students", require('./app/studentAPI.js'))
