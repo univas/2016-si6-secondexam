@@ -10,8 +10,8 @@
             $("#name").replaceWith(student.name);
             $("#email").replaceWith(student.email);
             $("#photo").attr('src',student.photo);
-            var status = checkStatus(student.id);
-            console.log(status);
+            $("#status").replaceWith(student.status);
+            
         });
     }
 

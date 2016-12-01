@@ -3,8 +3,25 @@ const express = require("express")
 const router = express.Router();
 const studentsDB = require("./studentsDB.json");
 
-function checkStatus(studentId) {
-    var student = getStudentById(studentId);
+router.get("/", (req, res) => {
+    res.json(studentsDB);
+})
+
+router.get("/:studentId", function(req, res){
+    let studentId = req.params.studentId
+    let studentData = getStudentById(studentId)
+    
+    if(studentData) {
+        var result = checkStatus(studentData)
+        studentData.status = result;
+        res.json(studentData)
+    }else{
+        res.status(404).send("Not Found")
+    }
+})
+
+function checkStatus(student) {
+    //var student = getStudentById(studentId);
     var media = calculateMedia(student);
     
     var result;
@@ -35,20 +52,7 @@ function calculateMedia(student) {
     
 }
 
-router.get("/", (req, res) => {
-    res.json(studentsDB);
-})
 
-router.get("/:studentId", function(req, res){
-    let studentId = req.params.studentId
-    let studentData = getStudentById(studentId)
-    
-    if(studentData) {
-        res.json(studentData)
-    }else{
-        res.status(404).send("Not Found")
-    }
-})
 
 
 module.exports = router
