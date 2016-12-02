@@ -1,5 +1,22 @@
 "use strict"
 
+const express = require("express")
+const router = express.Router()
+const studentsDB = require("./studentsDB.json")
+
+
+
+function getStudent(studentId){
+    return studentsDB.find(student =>student.id === studentId)
+    
+}
+
+
+router.get("/",(request,response)=> {
+    response.jason(studentsDB)
+})
+
+
 function getAverage (grades){
     var total = 0
     
@@ -7,7 +24,7 @@ function getAverage (grades){
         total += grades[i]
         
    }
-    var average = total /grades.length;
+    var average = total /grades.length
 }
 
 function getStatus (average){
@@ -22,3 +39,5 @@ function getStatus (average){
         console.log("Status:Disapproved")
     }
 }
+
+module.exports = router
