@@ -14,4 +14,5 @@ module.exports = function(app) {
         const id = request.params.id;
        console.log(id);
     });
-} 
+};
+
