@@ -8,11 +8,10 @@ const studentDB = require("./studentDB.json");
 
 // private
 function checkStudents(studentId) {
-    return studentDB.find(student => studentId.id === studentId);
+    return studentsDB.find(function(student){student.id === studentID;});
 }
 
 //Função de verificação do estudante
-
 //Função para pegar o ID do estudante
 function checkStudents(request, response) {
     var studentID = request.query.mat;
