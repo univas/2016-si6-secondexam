@@ -3,12 +3,28 @@
   "version": "1.0.0",
   "description": "2016 - SI6 Second Exam",
   "scripts": {
-    "postinstall": "node ./scripts/generate-studentsDB.js"
+    "postinstall": "node ./scripts/generate-studentsDB.js",
+    "start": "node server.js"
   },
   "author": "Edy Segura",
   "license": "ISC",
   "devDependencies": {
     "faker": "^3.1.0",
     "pad": "^1.0.2"
-  }
+  },
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "faker": "^3.1.0",
+    "pad": "^1.0.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sabrina-Andrade/2016-si6-secondexam.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Sabrina-Andrade/2016-si6-secondexam/issues"
+  },
+  "homepage": "https://github.com/Sabrina-Andrade/2016-si6-secondexam#readme"
 }

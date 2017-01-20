@@ -6,12 +6,14 @@
             method: "GET",
             url: "/api/students/" + id
         })
-        .done(student => {
-            console.log(student)
+        .done(function onResponse(student) {
+            $("#studentNumber").val('')
+            $(document.body)
+            .append('<img src="studentsDB/http://lorempixel.com/128/128/people' + student.name +  + student.nameemail + student.status + '">');
         });
     }
-
-    $("form").on("submit", event => {
+            
+     $("form").on("submit", event => {
         let id = $("#studentId").val()
         getStudentById(id)
         return false
