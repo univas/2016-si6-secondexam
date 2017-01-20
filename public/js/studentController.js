@@ -4,10 +4,13 @@
     function getStudentById(id) {
         $.ajax({
             method: "GET",
-            url: "/api/students/" + id
+            url: "api/student/" + id
         })
         .done(student => {
-            console.log(student)
+            document.getElementById('student-name').innerHTML = student.name
+            document.getElementById('email').innerHTML = student.email
+            document.getElementById('photo').src = student.photo
+            document.getElementById('status').innerHTML = student.situation
         });
     }
 
