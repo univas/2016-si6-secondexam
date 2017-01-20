@@ -3,12 +3,17 @@
   "version": "1.0.0",
   "description": "2016 - SI6 Second Exam",
   "scripts": {
-    "postinstall": "node ./scripts/generate-studentsDB.js"
+    "postinstall": "node ./scripts/generate-studentsDB.js",
+    "start": "node index.js"
   },
   "author": "Edy Segura",
   "license": "ISC",
   "devDependencies": {
     "faker": "^3.1.0",
     "pad": "^1.0.2"
+  },
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0"
   }
 }
