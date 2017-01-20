@@ -7,7 +7,10 @@
             url: "/api/students/" + id
         })
         .done(student => {
-            console.log(student)
+            $('section h2').html(student.name)
+            $('#email').html(student.email)
+            $('#photo').attr('src', student.photo)
+            $('#status').html(student.status)
         });
     }
 
