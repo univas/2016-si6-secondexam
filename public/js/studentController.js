@@ -7,8 +7,13 @@
             url: "/api/students/" + id
         })
         .done(student => {
-            console.log(student)
-        });
+            $("#name").html(student.name)
+            $("#email").html(student.email)
+            $("#photo").html(student.photo)
+            $("#status").html(student.status)
+        }).fail(function (error) {
+            alert(error.responseText)
+        })
     }
 
     $("form").on("submit", event => {
