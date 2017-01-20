@@ -6,8 +6,12 @@
             method: "GET",
             url: "/api/students/" + id
         })
-        .done(student => {
-            console.log(student)
+        .done(function(student){
+            $("#name").replaceWith('<h2 id="name">' + student.name + '</h2>');
+            $("#email").replaceWith('<span id="email">'+student.email+'</span>');
+            $("#photo").attr('src',student.photo);
+            $("#status").replaceWith('<span id="status">'+student.status+'</span>');
+            
         });
     }
 
