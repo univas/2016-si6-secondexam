@@ -12,7 +12,7 @@ const studentsDB = []
 faker.locale = "pt_BR"
 
 for (let studentNumber = 1; studentNumber <= 100; studentNumber++) {
-    const firstName = faker.name.firstName() 
+    const firstName = faker.name.firstName()
     const lastName = faker.name.lastName()
     const year = 2017
 
